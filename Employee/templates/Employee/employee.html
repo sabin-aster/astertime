@@ -1,0 +1,402 @@
+{% extends 'Employee/admin_index.html' %}
+
+{% load crispy_forms_tags %}  
+
+{% crispy example_form %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!--Bootstrap CSS-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+      <style>
+        
+        label::after {
+  content: ":";
+}
+
+label.required::after {
+  content: "*:";
+}
+
+      </style>
+    </head>
+    <body>
+        <div class="col-lg-12">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">User Creation </li>
+            </ol>
+          </div>
+          <div class="container">
+            <!-- <div class="row"> -->
+          
+          {% block content %}
+                    
+
+          <div class="d-inline-flex" style="justify-content:center;">
+                <form action = "" method = "post">
+                    {% csrf_token %}
+            <div class="container">
+              <div class="row">
+                
+
+                <div class="col">
+                  <p><label required="true" class="required" for="{{ form.Employee_Id_for_label }}">Employee Id</label><br>
+                      {{ form.Employee_Id}}</p>
+                </div>
+
+                <div class="col">
+                  <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">Employee Number</label>
+                      {{ form.Employee_Number}}</p>
+                </div>
+              
+              <div class="col">
+                <p><label class="my-classes" for="{{ form.name.id_for_label }}">Employee Status</label><br>
+                  {{ form.Employee_Status }}</p>
+            </div>
+
+            </div>
+                          
+           </div>
+
+
+           <div class="container">
+            <div class="row">
+              
+
+              <div class="col">
+                <p><label class="my-classes" for="{{ form.address.id_for_label }}">PAN Number</label>
+                    {{ form.PAN_Number}}</p>
+              </div>
+
+              <div class="col">
+                <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">Name Initials</label>
+                    {{ form.Employee_Name_Initials}}</p>
+              </div>
+
+
+              <div class="col">
+                <p><label class="my-classes" for="{{ form.address.id_for_label }}">Title</label><br>
+                    {{ form.Title}}</p>
+              </div>
+            
+            
+
+          </div>
+                        
+         </div>
+         <div class="container">
+          <div class="row">
+            
+            <div class="col">
+              <p><label class="my-classes" for="{{ form.name.id_for_label }}">Last Name</label><br>
+                {{ form.Last_Name }}</p>
+          </div>
+
+
+            <div class="col">
+              <p><label class="my-classes" for="{{ form.address.id_for_label }}">First Name</label><br>
+                  {{ form.First_Name}}</p>
+            </div>
+
+            <div class="col">
+              <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">Middle Name</label>
+                  {{ form.Middle_Name}}</p>
+            </div>
+          
+         
+
+        </div>
+                      
+       </div>
+
+       
+
+     <div class="container">
+      <div class="row">
+        <div class="col">
+          <p><label class="my-classes" for="{{ form.name.id_for_label }}">Full Name</label><br>
+            {{ form.Full_Name}}</p>
+      </div>
+
+        
+
+        <div class="col">
+          <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">Date Of Birth</label><br>
+              {{ form.Date_Of_Birth}}</p>
+        </div>
+      
+      <div class="col">
+        <p><label class="my-classes" for="{{ form.name.id_for_label }}">Date Of Joined</label><br>
+          {{ form.Date_Of_Joined }}</p>
+    </div>
+
+    </div>
+                  
+   </div>
+   <div class="container">
+    <div class="row">
+      
+
+      <div class="col">
+        <p><label class="my-classes" for="{{ form.address.id_for_label }}">Probation Period</label>
+            {{ form.Probation_Period}}</p>
+      </div>
+
+      <div class="col">
+        <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">Date Of Confirmation</label>
+            {{ form.Date_Of_Confirmation}}</p>
+      </div>
+    
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.name.id_for_label }}">Date Of Resignation</label><br>
+        {{ form.Date_Of_Resignation }}</p>
+  </div>
+
+  </div>
+                
+ </div>
+
+
+ <div class="container">
+  <div class="row">
+    
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.address.id_for_label }}">Last Date Work</label>
+          {{ form.Last_Date_Work}}</p>
+    </div>
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">Designation</label><br>
+          {{ form.Designation}}</p>
+    </div>
+  
+  <div class="col">
+    <p><label class="my-classes" for="{{ form.name.id_for_label }}">Salary Tier</label><br>
+      {{ form.Salary_Tier}}</p>
+</div>
+
+</div>
+              
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.address.id_for_label }}">Grade</label><br>
+          {{ form.Grade}}</p>
+    </div>
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">Daily Attendance Enable</label><br>
+          {{ form.Daily_Attendance_Enable}}</p>
+    </div>
+  
+  <div class="col">
+    <p><label class="my-classes" for="{{ form.name.id_for_label }}">TDS Enable</label><br>
+      {{ form.TDS_Enable}}</p>
+</div>
+
+</div>
+              
+</div>
+
+
+
+
+<div class="container">
+  <div class="row">
+    
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.address.id_for_label }}">PF Enable</label><br>
+          {{ form.PF_Enable}}</p>
+    </div>
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">TF Enable</label><br>
+          {{ form.TF_Enable}}</p>
+    </div>
+  
+  <div class="col">
+    <p><label class="my-classes" for="{{ form.name.id_for_label }}">Staff Welfare</label><br>
+      {{ form.Staff_Welfare}}</p>
+</div>
+
+</div>
+              
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.address.id_for_label }}">Sports Fund</label><br>
+          {{ form.Sports_Fund}}</p>
+    </div>
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">CSR Foundation Fund </label><br>
+          {{ form.CSR_Foundation_Fund}}</p>
+    </div>
+  
+  <div class="col">
+    <p><label class="my-classes" for="{{ form.name.id_for_label }}">Staff Loan Entitlement</label><br>
+      {{ form.Staff_Loan_Entitlement}}</p>
+</div>
+
+</div>
+              
+</div>
+
+<div class="container">
+  <div class="row">
+    
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.address.id_for_label }}"> Limit Loan</label><br>
+          {{ form.Limit_Loan}}</p>
+    </div>
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">Repayment Terms </label><br>
+          {{ form.Term_Repayment}}</p>
+    </div>
+  
+  <div class="col">
+    <p><label class="my-classes" for="{{ form.name.id_for_label }}">LOO Issued Date</label><br>
+      {{ form.LOO_Issued_Date}}</p>
+</div>
+
+</div>
+              
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.address.id_for_label }}"> LOA Issued Date</label><br>
+          {{ form.LOA_Issued_Date}}</p>
+    </div>
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">NDA Signed Date</label><br>
+          {{ form.NDA_Signed_Date}}</p>
+    </div>
+  
+  <div class="col">
+    <p><label class="my-classes" for="{{ form.name.id_for_label }}">Resignation Recorded Date</label><br>
+      {{ form.Resignation_Recorded_Date}}</p>
+</div>
+
+</div>
+              
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.address.id_for_label }}"> Resignation Approved Date</label><br>
+          {{ form.Resignation_Approved_Date}}</p>
+    </div>
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">Service Letter Issued Date</label><br>
+          {{ form.Service_Letter_Issued_Date}}</p>
+    </div>
+  
+  <div class="col">
+    <p><label class="my-classes" for="{{ form.name.id_for_label }}">Bank Name & Code</label><br>
+      {{ form.Bank_Name_and_Code}}</p>
+</div>
+
+</div>
+              
+</div>
+
+<div class="container">
+  <div class="row">
+    
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.address.id_for_label }}"> Bank Branch Name & Code</label><br>
+          {{ form.Bank_Branch_Name_and_Code}}</p>
+    </div>
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">Bank Account</label><br>
+          {{ form.Bank_Account }}</p>
+    </div>
+  
+  <div class="col">
+    <p><label class="my-classes" for="{{ form.name.id_for_label }}">Bank Account Number</label><br>
+      {{ form.Bank_Account_Number }}</p>
+</div>
+
+</div>
+              
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.address.id_for_label }}"> Emergency Relative Name</label><br>
+          {{ form.Emergency_Relative_Name}}</p>
+    </div>
+
+    <div class="col">
+      <p><label class="my-classes" for="{{ form.mobile.id_for_label }}">Emergency Relative Relations</label><br>
+          {{ form.Emergency_Relative_Relations}}</p>
+    </div>
+  
+  <div class="col">
+    <p><label class="my-classes" for="{{ form.name.id_for_label }}">Emergency Blood Group</label><br>
+      {{ form.Emergency_Blood_Group}}</p>
+</div>
+
+</div>
+              
+</div>
+
+
+
+     
+                    <input type="submit" value="Submit">
+                </form>
+                </div>
+
+
+
+
+          {% endblock %}
+          
+          <!-- </div> -->
+          </div>
+    <!-- Optional Javascript -->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>
